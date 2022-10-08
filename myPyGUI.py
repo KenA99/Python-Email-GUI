@@ -5,7 +5,6 @@ from dateutil.relativedelta import relativedelta
 from tkinter import *
 from tkinter import ttk
 
-
 #this variable creates the last month so that the forms can be submitted for the previous month
 d = date.today()
 changeMonth = d.replace(day=1) - relativedelta(months=1)

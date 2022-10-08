@@ -5,7 +5,7 @@ from dateutil.relativedelta import relativedelta
 from tkinter import *
 from tkinter import ttk
 
-print("GitHub is dumb.")
+
 #this variable creates the last month so that the forms can be submitted for the previous month
 d = date.today()
 changeMonth = d.replace(day=1) - relativedelta(months=1)
@@ -50,15 +50,6 @@ distributionLists = {
     8: "CHFS OAS DFM Inspections"
 }
 
-#print bodyTypes to show file options
-#print(bodyTypes)
-
-#need to add try/except to protect the input from crashing
-#def selectButton(num):
-#    global inputBody
-#    inputBody = num
-
-
 #selection of a body or a to exit the program
 def submitButton(inputBody):
     
@@ -69,16 +60,16 @@ def submitButton(inputBody):
     else:
         sys.exit("Program Exited")
 
-#reference for Outlook to pull text from relevant HTML document selected
+    #reference for Outlook to pull text from relevant HTML document selected
     with open(selectBody,"r", encoding="utf-8") as f:
         emailBody = f.read()
 
-#connecting to Outlook application and namespace
+    #connecting to Outlook application and namespace
     olApp = win32.Dispatch("Outlook.Application")
     olNS = olApp.GetNameSpace("MAPI")
 
-#creating the email using information choose above
-#the date format works when there is a date for today present in the subject line
+    #creating the email using information choose above
+    #the date format works when there is a date for today present in the subject line
     newMail = olApp.CreateItem(0)
     newMail.To = selectTo
     newMail.Subject = selectSubject.format(date.today())
@@ -86,7 +77,7 @@ def submitButton(inputBody):
     newMail.HTMLBody = emailBody
     newMail.Display(True)
 
-#tkinter GUI application for selecting email to send
+#***tkinter GUI application for selecting email to send***
 
 #create window
 root = Tk()

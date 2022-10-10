@@ -15,22 +15,22 @@ nextMonth = changeMonth2.strftime("%B %Y")
 #dictionary containing the names of & HTML documents for email bodies
 bodyTypes = {
     0: "Exit",
-    1: "scheduleUpdate.html",
-    2: "passcode.html",
+    1: "passcode.html",
+    2: "scheduleUpdate.html",
     3: "monthlyeport.html"
 }
 
 #dictionary of subject lines to be used with corresponding email bodies
 subjectTypes = {
-    1: f"Schedule Update for {nextMonth}",
-    2: "Pass Code Updated {:%m/%d/%y}", 
+    1: "Pass Code Updated {:%m/%d/%y}",
+    2: f"Schedule Update for {nextMonth}", 
     3: f"{lastMonth} Report"
 }
 
 #dictionary for distribution lists used for sending emails for To:
 distributionLists = {
-    1: "Remote Work Team",
-    2: "Office Work Team; Hybrid Work Team",
+    1: "Office Work Team; Hybrid Work Team",
+    2: "Remote Work Team",
     3: "john.smith@example.com"
 }
 
@@ -75,9 +75,9 @@ olLabel = ttk.Label(frm, text="Outlook Form").grid(row=0, column=0, pady=10)
 #ttk.Button(frm, text="Quit", command=root.destroy).pack()
 
 #labels for email options
-ttk.Label(frm, text="Update Schedule Email Template").grid(row=1,column=0, padx=5, pady=5)
+ttk.Label(frm, text="Pass Code Email Template").grid(row=1,column=0, padx=5, pady=5)
 button1 = ttk.Button(frm, text="Select", width=10, command=lambda:submitButton(1)).grid(row=1,column=1, padx=5, pady=5)
-ttk.Label(frm, text="Pass Code Email Template").grid(row=2,column=0, padx=5, pady=5)
+ttk.Label(frm, text="Update Schedule Email Template").grid(row=2,column=0, padx=5, pady=5)
 button2 = ttk.Button(frm, text="Select", width=10, command=lambda:submitButton(2)).grid(row=2,column=1, padx=5, pady=5)
 ttk.Label(frm, text="Monthly Email Template").grid(row=3,column=0, padx=5, pady=5)
 button3 = ttk.Button(frm, text="Select", width=10, command=lambda:submitButton(3)).grid(row=3,column=1, padx=5, pady=5)

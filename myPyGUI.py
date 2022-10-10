@@ -15,38 +15,23 @@ nextMonth = changeMonth2.strftime("%B")
 #dictionary containing the names of & HTML documents for email bodies
 bodyTypes = {
     0: "Exit",
-    1: "onCall.html",
-    2: "doorCode.html",
-    3: "walktrough.html",
-    4: "rmsPers.html",
-    5: "rmsSched.html",
-    6: "janitorSign.html",
-    7: "janitorInsp.html",
-    8: "pestCtrl.html"   
+    1: "scheduleUpdate.html",
+    2: "passcode.html",
+    3: "monthlyeport.html"
 }
 
 #dictionary of subject lines to be used with corresponding email bodies
 subjectTypes = {
-    1: f"{nextMonth} CPS/APS On Call Update",
-    2: "Door Code Updated {:%m/%d/%y}", 
-    3: "PR #3720 Hardin County Safety Walkthrough",
-    4: "RMS Personnel Update for MM/DD/YY-MM/DD/YY",
-    5: "RMS Hits for MM/DD/YY-MM/DD/YY",
-    6: f"PR #3720 Hardin County {lastMonth} Janitorial Sign In/Out",
-    7: f"PR #3720 Hardin County {lastMonth} Janitorial Inspection",
-    8: f"PR #3720 Hardin County {lastMonth} Pest Control Report & Invoice"
+    1: f"Schedule Update for {nextMonth}",
+    2: "Pass Code Updated {:%m/%d/%y}", 
+    3: f"PR #3720 Hardin County {lastMonth} Janitorial Sign In/Out"
 }
 
 #dictionary for distribution lists used for sending emails for To:
 distributionLists = {
-    1: "CPS-APS OnCall",
-    2: "Whole Hardin",
-    3: "larryc@ky.gov",
-    4: "RMS Contacts",
-    5: "RMS Contacts",
-    6: "CHFS OAS DFM Inspections",
-    7: "CHFS OAS DFM Inspections",
-    8: "CHFS OAS DFM Inspections"
+    1: "Remote Work Team",
+    2: "Office Work Team; Hybrid Work Team",
+    3: "john.smith@example.com"
 }
 
 #selection of a body or a to exit the program

@@ -75,12 +75,12 @@ olLabel = ttk.Label(frm, text="Outlook Form").grid(row=0, column=0, pady=10)
 #ttk.Button(frm, text="Quit", command=root.destroy).pack()
 
 #labels for email options
-ttk.Label(frm, text="Update Schedule Email Template").grid(row=1,column=0)
-button1 = ttk.Button(frm, text="Select", width=30, command=lambda:submitButton(1)).grid(row=1,column=1, padx=5, pady=5)
-ttk.Label(frm, text="Pass Code Email Template").grid(row=2,column=0)
-button2 = ttk.Button(frm, text="Select", width=30, command=lambda:submitButton(2)).grid(row=2,column=1, padx=5, pady=5)
-ttk.Label(frm, text="Monthly Email Template").grid(row=3,column=0)
-button3 = ttk.Button(frm, text="Select", width=30, command=lambda:submitButton(3)).grid(row=3,column=1, padx=5, pady=5)
+ttk.Label(frm, text="Update Schedule Email Template").grid(row=1,column=0, padx=5, pady=5)
+button1 = ttk.Button(frm, text="Select", width=10, command=lambda:submitButton(1)).grid(row=1,column=1, padx=5, pady=5)
+ttk.Label(frm, text="Pass Code Email Template").grid(row=2,column=0, padx=5, pady=5)
+button2 = ttk.Button(frm, text="Select", width=10, command=lambda:submitButton(2)).grid(row=2,column=1, padx=5, pady=5)
+ttk.Label(frm, text="Monthly Email Template").grid(row=3,column=0, padx=5, pady=5)
+button3 = ttk.Button(frm, text="Select", width=10, command=lambda:submitButton(3)).grid(row=3,column=1, padx=5, pady=5)
 
 button0 = ttk.Button(frm, text="Exit Program", command=lambda:submitButton(0)).grid(row=9,column=1, pady=10)
 #buttonSubmit = ttk.Button(frm, text="Submit", command=lambda:submitButton(inputBody)).grid(row=9,column=1, pady=10)

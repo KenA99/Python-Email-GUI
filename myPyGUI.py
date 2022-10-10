@@ -9,8 +9,8 @@ from tkinter import ttk
 d = date.today()
 changeMonth = d.replace(day=1) - relativedelta(months=1)
 changeMonth2 = d.replace(day=1) + relativedelta(months=1)
-lastMonth = changeMonth.strftime("%B")
-nextMonth = changeMonth2.strftime("%B")
+lastMonth = changeMonth.strftime("%B %Y")
+nextMonth = changeMonth2.strftime("%B %Y")
 
 #dictionary containing the names of & HTML documents for email bodies
 bodyTypes = {
@@ -24,7 +24,7 @@ bodyTypes = {
 subjectTypes = {
     1: f"Schedule Update for {nextMonth}",
     2: "Pass Code Updated {:%m/%d/%y}", 
-    3: f"PR #3720 Hardin County {lastMonth} Janitorial Sign In/Out"
+    3: f"{lastMonth} Report"
 }
 
 #dictionary for distribution lists used for sending emails for To:
@@ -75,22 +75,12 @@ olLabel = ttk.Label(frm, text="Outlook Form").grid(row=0, column=0, pady=10)
 #ttk.Button(frm, text="Quit", command=root.destroy).pack()
 
 #labels for email options
-ttk.Label(frm, text="On Call Email Template").grid(row=1,column=0)
-button1 = ttk.Button(frm, text="Select On Call Email", width=30, command=lambda:submitButton(1)).grid(row=1,column=1, padx=5, pady=5)
-ttk.Label(frm, text="Door Code Email Template").grid(row=2,column=0)
-button2 = ttk.Button(frm, text="Select Door Code Email", width=30, command=lambda:submitButton(2)).grid(row=2,column=1, padx=5, pady=5)
-ttk.Label(frm, text="Safety Walkthrough Email Template").grid(row=3,column=0)
-button3 = ttk.Button(frm, text="Select Safety Walkthrough Email", width=30, command=lambda:submitButton(3)).grid(row=3,column=1, padx=5, pady=5)
-ttk.Label(frm, text="RMS Personnel Update Email Template").grid(row=4,column=0)
-button4 = ttk.Button(frm, text="Select Personnel Update Email", width=30, command=lambda:submitButton(4)).grid(row=4,column=1, padx=5, pady=5)
-ttk.Label(frm, text="RMS Schedule Email Template").grid(row=5,column=0)
-button5 = ttk.Button(frm, text="Select Schedule Email", width=30, command=lambda:submitButton(5)).grid(row=5,column=1, padx=5, pady=5)
-ttk.Label(frm, text="Janitor Sign In/Out Email Template").grid(row=6,column=0)
-button6 = ttk.Button(frm, text="Select Sign In/Out Email", width=30, command=lambda:submitButton(6)).grid(row=6,column=1, padx=5, pady=5)
-ttk.Label(frm, text="Bimonthly Janitorial Inspection Email Template").grid(row=7,column=0)
-button7 = ttk.Button(frm, text="Select Inspection Email", width=30, command=lambda:submitButton(7)).grid(row=7,column=1, padx=5, pady=5)
-ttk.Label(frm, text="Pest Control Invoice & Report Email Template").grid(row=8,column=0)
-button8 = ttk.Button(frm, text="Select Pest Control Email", width=30, command=lambda:submitButton(8)).grid(row=8,column=1, padx=5, pady=5)
+ttk.Label(frm, text="Update Schedule Email Template").grid(row=1,column=0)
+button1 = ttk.Button(frm, text="Select", width=30, command=lambda:submitButton(1)).grid(row=1,column=1, padx=5, pady=5)
+ttk.Label(frm, text="Pass Code Email Template").grid(row=2,column=0)
+button2 = ttk.Button(frm, text="Select", width=30, command=lambda:submitButton(2)).grid(row=2,column=1, padx=5, pady=5)
+ttk.Label(frm, text="Monthly Email Template").grid(row=3,column=0)
+button3 = ttk.Button(frm, text="Select", width=30, command=lambda:submitButton(3)).grid(row=3,column=1, padx=5, pady=5)
 
 button0 = ttk.Button(frm, text="Exit Program", command=lambda:submitButton(0)).grid(row=9,column=1, pady=10)
 #buttonSubmit = ttk.Button(frm, text="Submit", command=lambda:submitButton(inputBody)).grid(row=9,column=1, pady=10)
